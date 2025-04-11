@@ -23,13 +23,6 @@
   </url>
   
   <url>
-    <loc>https://qindongxu.cn/galleries/%25E8%2583%258C%25E6%2599%25AF%25E5%259B%25BE%25E7%2589%25873/index.html</loc>
-    
-    <lastmod>2025-03-17T07:20:13.728Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://qindongxu.cn/galleries/%25E8%2583%258C%25E6%2599%25AF%25E5%259B%25BE%25E7%2589%25874/index.html</loc>
     
     <lastmod>2025-03-17T07:20:13.728Z</lastmod>
@@ -37,7 +30,14 @@
   </url>
   
   <url>
-    <loc>https://qindongxu.cn/galleries/index.html</loc>
+    <loc>https://qindongxu.cn/galleries/%25E8%2583%258C%25E6%2599%25AF%25E5%259B%25BE%25E7%2589%25873/index.html</loc>
+    
+    <lastmod>2025-03-17T07:20:13.728Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qindongxu.cn/friends/index.html</loc>
     
     <lastmod>2025-03-17T07:20:13.726Z</lastmod>
     
@@ -51,9 +51,16 @@
   </url>
   
   <url>
-    <loc>https://qindongxu.cn/friends/index.html</loc>
+    <loc>https://qindongxu.cn/galleries/index.html</loc>
     
     <lastmod>2025-03-17T07:20:13.726Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qindongxu.cn/categories/index.html</loc>
+    
+    <lastmod>2025-03-17T07:20:13.725Z</lastmod>
     
   </url>
   
@@ -66,13 +73,6 @@
   
   <url>
     <loc>https://qindongxu.cn/archives/index.html</loc>
-    
-    <lastmod>2025-03-17T07:20:13.725Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qindongxu.cn/categories/index.html</loc>
     
     <lastmod>2025-03-17T07:20:13.725Z</lastmod>
     
