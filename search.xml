@@ -91,6 +91,35 @@
     
     
     <entry>
+      <title>前端知识汇总（持续更新中.....）</title>
+      <link href="/2025/05/10/88/"/>
+      <url>/2025/05/10/88/</url>
+      
+        <content type="html"><![CDATA[<p>1、什么是闭包，闭包的应用场景<br>A:什么是闭包：所谓的闭包就得从变量提升说起，在 js 中全局作用域不能访问局部作用域内的变量，而局部变量可以访问全局变量；</p><p>在函数执行前会产生执行期上下文也叫作用域，有全局作用域(window)，和局部作用域(执行时产生的)，一般函数执行完成后；</p><p>他的作用域就会被销毁；闭包就是相当于你在执行该函数后，没有执行完成，也就是该函数的作用域没有被销毁；紧接着又产生了一个新的作用域</p><p>一般函数默认返回的是一个 undefined，所以执行到最后，相当于函数执行完了他的执行期上下文就会被销毁；但是闭包返回的是一个函数，说明</p><p>返回回来又是一个新的函数，新的函数又会产生一个新的作用域，只有当你执行该 return 返回的函数时该函数才会被销毁，如果没有执行则该作用域</p><p>就会一直存在该内存中等在执行，所以这就是闭包的为什么会存在内存泄露，想要解决这种情况，就可以使用立即执行函数<br>B:应用场景，一般情况在节流与防抖中会使用闭包，或者可以污染全局变量，还有属性私有化；<br>2、使用过哪些 es6 的语法<br>1、const let<br>2、解构<br>3、模板字符串<br>4、类<br>5、promise<br>6、set map<br>3、基本数据类型和引用数据类型，如何深拷贝<br>1、基本树类型：string number boolean null undefined<br>2、引用数据类型：Object Array Function Date RegExp<br>3、深拷贝的方法：<br>a、使用 JSON 转换：<br>1、先使用 JSON.stringify 把值转换为字符串格式，然后在 JSON.parse 转换成对象或者数组；<br>2、优缺点：如果对象里面有函数，则该函数无法拷贝；如果对象原型链上有属性和方法也无法拷贝<br>b、迭代递归方法<br>c、Object.assign 方法，不过该方法仅限于一级拷贝，如果二级的话还是浅拷贝<br>d、es6 的解构这个方法和 Object.assign 一样仅限于一级深入拷贝，二级深入就是浅拷贝<br>4、如何区分是否是数组<br>1、A instanceof B 看 A 对象的原型链上 有没有 B 的原型<br>2、Object.prototype.toString.call();<br>3、constructor： arr.constructor===Array;<br>5、css 如何引入自定义字体 首先下载好字体文件<br>@font-face{font-family:’随便的字体名字‘;src:’文件路径’}<br>在哪里用到这个字体就可以在该标签下加上 font-family:’字体名字’就可以了，如果字体太大的话可以使用字体蜘蛛进行压缩<br>6、说说对 mvvm 的理解<br>自己的理解：所谓的 mvvm 叫 model-view-viewModel;<br>model 相当于数据模型，可进行定义数据修改和操作数据的业务逻辑；<br>view 相当于 UI 组件把数据模型通过 UI 展示出来；<br>viewModel 是一个同步 view 和 model 的对象<br>在 Mvvm 架构下，view 和 model 之间是没有直接联系的，他们是通过 ViewModel 进行交互的，model 和 viewModel 之间的交互是双向的，<br>因此 View 数据的变化会同步到 Model 中，而 Model 数据变化也会立即返回到 View 上<br>7、vue 的生命周期钩子函数<br>8、computed 与 watch 的应用场景<br>computed:多用于数据计算和字符处理；<br>watch:多用于处理事件交互<br>9、watch 如何进行深度监听，监听对象属性<br>在 watch 中加入 deep:true 就可以深度监听对象属性变化<br>如果想要单独监听某个属性可以使用字符串形式’obj.属性名’的方法监听<br>10、vue 路由的两种模式<br>1、history 模式:使用的是 h5 的 history.pushState 方法，然后通过监听 popstate 来设置内容<br>2、hash 模式：去监听浏览器的 hashchange 方法，然后在 location.hash 拿到对应的路径，然后再渲染<br>11、路由守卫<br>1、全局守卫: to:去哪个页面,from:从哪个页面来的；next:是否可以进行跳转通过<br>A:beforeEach(to,from,next)：在加载路由组件之前就会执行该函数<br>B:beforeResolve(to,from,next):在路由组件加载完成但未跳转之前会执行该函数<br>C:beforeAfter(to,from)：在路由跳转完成后会执行该函数<br>2、路由独享守卫<br>A:beforeEnter(to,from,next)：对单独的页面进行设置<br>3、组件内守卫<br>A:beforeRouterEnter:路由进入之前调用。<br>B:beforeRouterUpdate:路由变化时调用。<br>C:beforeRouteLeave:路由离开时调用。<br>12、h5 新增了哪些东西<br>1、新增的属性：placeholder，Calendar,date,time,email,url,search,ContentEditable,Draggable,Hidden Context-menu Data-val<br>2、新增的标签：语义化标签，canvas，svg，Audio，video，<br>3、Api:定位，重力感应，动画优化，History,LocalStorage,SessionStorage,websocket,fileReader,webWorker,Fetch<br>13、什么是语义化标签<br>如果整个网站都使用 div 来布局，其实也可以，但是如果后续想要维护代码，就会发现无法识别哪个 div 是头部哪个 div 是列表，很难查找，于是就出现了一些标签可以用来区分是某个模块，方便理解页面结构<br>如：header 标签表示包裹的内容是头部区域，span：表示该包裹的是文本,ul 该包裹的是列表，aside 表示侧边栏；main 表示主要内容；nav 表示导航；section 段落标签：可用一块一块的区域;article 文章标签可以直接引用拿走;footer 表示底部区域</p><p>14、什么是原型，什么是原型链？知道哪些继承<br>1、原型：只有函数才有原型，原型是一个对象，默认情况下，原型上的构造函数指向的是函数本身；<br>2、原型链：每个对象都有隐式原型，每个隐式原型的指向就会形成一个链条，而隐式原型也是个对象，也就是说也他也有隐式原型，那这样下去不就用永无止境了，隐式原型的最顶端是 null,因为到最后使用由 Object 的原型上的隐式原型就为 null；这一系列形成的链条就叫原型链；<br>3、继承：<br>1、构造函数继承：在另一个函数内部使用 app 或者 call 方法<br>2、原型实例继承：让新构造对象的原型指向父级的实例 Cat.prototype=new Animal();这里得把 Cat 原型的 constructor 指向自己，不然访问的时候会是父级函数不是自己；缺点：增加内存消耗，多 new 了一个实例<br>3、原型原型继承：这里与原型实例继承不一样，他继承的不是实例了而是直接继承父级的原型 prototype;其他的还是一样，也要改原型上 constructor 的值；优点：减少内存消耗，减少创建实例对象<br>4、圣杯继承：创建一个空对象，先让空对象的原型指向父级的原型，然后让子级的原型指向这个对象实例，然后改变子级原型的 constructor 属性，最后在子级的原型上加入一个属性指向父级函数(也可以是父级的原型)<br>15、echarts 如果需要实时刷新数据怎么办;<br>使用定时器实时去获取数据，然后通过监听器去监听数据的变化<br>16、浏览器缓存有哪些？<br>http 缓存，cookie,Localstorage，Sessionstorage;<br>1、http 缓存：当客户端给向服务器请求资源，会先去看浏览器的缓存，如果浏览器的缓存中又该资源，就直接从浏览器缓存中获取而不会向服务器发送请求获取数据；<br>http 缓存都是从第二次请求开始，第一次请求资源时，从服务器返回资源，并在响应头中返回缓存参数，第二次请求时，浏览器判断这些请求参数，命中强缓存<br>就直接 200，否则就把请求参数添加到请求头中传给服务器，看是否命中协商缓存，命中协商缓存就返回 304，否则服务器会返回新的资源<br>2、cookie ：cookie 大小只能存 4kb 而且它是以字符串文本进行传输，每次请求都需带上 cookie 增加请求带宽，cookie 是存在客户端的，cookie 可以设置过期时间，如果没有设置它是跟随浏览器关闭而消失，如果设置了，关闭浏览器也不会消失，只有到了过期时间他在会自动消失<br>3、Localstorage 永久性的缓存，如果自己不手动 remove 则会一直存在，他有自己的 API 方便使用，cookie 需要手动封装；<br>4、SessionStorage 临时性缓存，浏览器关闭后就会消失，他也有自己的 API 方便使用，与 Localstorage 一样存储的大小为 5M;不会向服务器进行通讯<br>5、Session 是由服务端产生的，保存在服务器内存，缓存，硬盘或者数据库中，他是一个对象，相对于 cookie 更安全一般情况通过在 cokie 中设置加密的 seeeionID 进行传递的，session 也有缺点，如果访问的用户很多，就会消耗服务器大量内存</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端知识汇总 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端知识汇总 </tag>
+            
+            <tag> Github </tag>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>react常见问题汇总2 （持续跟新整理....）</title>
       <link href="/2025/01/10/reactinterview2/"/>
       <url>/2025/01/10/reactinterview2/</url>
@@ -141,35 +170,6 @@
             <tag> 博客 </tag>
             
             <tag> react常见问题汇总1 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>八股文</title>
-      <link href="/2023/07/10/88/"/>
-      <url>/2023/07/10/88/</url>
-      
-        <content type="html"><![CDATA[<p>1、什么是闭包，闭包的应用场景<br>A:什么是闭包：所谓的闭包就得从变量提升说起，在 js 中全局作用域不能访问局部作用域内的变量，而局部变量可以访问全局变量；</p><p>在函数执行前会产生执行期上下文也叫作用域，有全局作用域(window)，和局部作用域(执行时产生的)，一般函数执行完成后；</p><p>他的作用域就会被销毁；闭包就是相当于你在执行该函数后，没有执行完成，也就是该函数的作用域没有被销毁；紧接着又产生了一个新的作用域</p><p>一般函数默认返回的是一个 undefined，所以执行到最后，相当于函数执行完了他的执行期上下文就会被销毁；但是闭包返回的是一个函数，说明</p><p>返回回来又是一个新的函数，新的函数又会产生一个新的作用域，只有当你执行该 return 返回的函数时该函数才会被销毁，如果没有执行则该作用域</p><p>就会一直存在该内存中等在执行，所以这就是闭包的为什么会存在内存泄露，想要解决这种情况，就可以使用立即执行函数<br>B:应用场景，一般情况在节流与防抖中会使用闭包，或者可以污染全局变量，还有属性私有化；<br>2、使用过哪些 es6 的语法<br>1、const let<br>2、解构<br>3、模板字符串<br>4、类<br>5、promise<br>6、set map<br>3、基本数据类型和引用数据类型，如何深拷贝<br>1、基本树类型：string number boolean null undefined<br>2、引用数据类型：Object Array Function Date RegExp<br>3、深拷贝的方法：<br>a、使用 JSON 转换：<br>1、先使用 JSON.stringify 把值转换为字符串格式，然后在 JSON.parse 转换成对象或者数组；<br>2、优缺点：如果对象里面有函数，则该函数无法拷贝；如果对象原型链上有属性和方法也无法拷贝<br>b、迭代递归方法<br>c、Object.assign 方法，不过该方法仅限于一级拷贝，如果二级的话还是浅拷贝<br>d、es6 的解构这个方法和 Object.assign 一样仅限于一级深入拷贝，二级深入就是浅拷贝<br>4、如何区分是否是数组<br>1、A instanceof B 看 A 对象的原型链上 有没有 B 的原型<br>2、Object.prototype.toString.call();<br>3、constructor： arr.constructor===Array;<br>5、css 如何引入自定义字体 首先下载好字体文件<br>@font-face{font-family:’随便的字体名字‘;src:’文件路径’}<br>在哪里用到这个字体就可以在该标签下加上 font-family:’字体名字’就可以了，如果字体太大的话可以使用字体蜘蛛进行压缩<br>6、说说对 mvvm 的理解<br>自己的理解：所谓的 mvvm 叫 model-view-viewModel;<br>model 相当于数据模型，可进行定义数据修改和操作数据的业务逻辑；<br>view 相当于 UI 组件把数据模型通过 UI 展示出来；<br>viewModel 是一个同步 view 和 model 的对象<br>在 Mvvm 架构下，view 和 model 之间是没有直接联系的，他们是通过 ViewModel 进行交互的，model 和 viewModel 之间的交互是双向的，<br>因此 View 数据的变化会同步到 Model 中，而 Model 数据变化也会立即返回到 View 上<br>7、vue 的生命周期钩子函数<br>8、computed 与 watch 的应用场景<br>computed:多用于数据计算和字符处理；<br>watch:多用于处理事件交互<br>9、watch 如何进行深度监听，监听对象属性<br>在 watch 中加入 deep:true 就可以深度监听对象属性变化<br>如果想要单独监听某个属性可以使用字符串形式’obj.属性名’的方法监听<br>10、vue 路由的两种模式<br>1、history 模式:使用的是 h5 的 history.pushState 方法，然后通过监听 popstate 来设置内容<br>2、hash 模式：去监听浏览器的 hashchange 方法，然后在 location.hash 拿到对应的路径，然后再渲染<br>11、路由守卫<br>1、全局守卫: to:去哪个页面,from:从哪个页面来的；next:是否可以进行跳转通过<br>A:beforeEach(to,from,next)：在加载路由组件之前就会执行该函数<br>B:beforeResolve(to,from,next):在路由组件加载完成但未跳转之前会执行该函数<br>C:beforeAfter(to,from)：在路由跳转完成后会执行该函数<br>2、路由独享守卫<br>A:beforeEnter(to,from,next)：对单独的页面进行设置<br>3、组件内守卫<br>A:beforeRouterEnter:路由进入之前调用。<br>B:beforeRouterUpdate:路由变化时调用。<br>C:beforeRouteLeave:路由离开时调用。<br>12、h5 新增了哪些东西<br>1、新增的属性：placeholder，Calendar,date,time,email,url,search,ContentEditable,Draggable,Hidden Context-menu Data-val<br>2、新增的标签：语义化标签，canvas，svg，Audio，video，<br>3、Api:定位，重力感应，动画优化，History,LocalStorage,SessionStorage,websocket,fileReader,webWorker,Fetch<br>13、什么是语义化标签<br>如果整个网站都使用 div 来布局，其实也可以，但是如果后续想要维护代码，就会发现无法识别哪个 div 是头部哪个 div 是列表，很难查找，于是就出现了一些标签可以用来区分是某个模块，方便理解页面结构<br>如：header 标签表示包裹的内容是头部区域，span：表示该包裹的是文本,ul 该包裹的是列表，aside 表示侧边栏；main 表示主要内容；nav 表示导航；section 段落标签：可用一块一块的区域;article 文章标签可以直接引用拿走;footer 表示底部区域</p><p>14、什么是原型，什么是原型链？知道哪些继承<br>1、原型：只有函数才有原型，原型是一个对象，默认情况下，原型上的构造函数指向的是函数本身；<br>2、原型链：每个对象都有隐式原型，每个隐式原型的指向就会形成一个链条，而隐式原型也是个对象，也就是说也他也有隐式原型，那这样下去不就用永无止境了，隐式原型的最顶端是 null,因为到最后使用由 Object 的原型上的隐式原型就为 null；这一系列形成的链条就叫原型链；<br>3、继承：<br>1、构造函数继承：在另一个函数内部使用 app 或者 call 方法<br>2、原型实例继承：让新构造对象的原型指向父级的实例 Cat.prototype=new Animal();这里得把 Cat 原型的 constructor 指向自己，不然访问的时候会是父级函数不是自己；缺点：增加内存消耗，多 new 了一个实例<br>3、原型原型继承：这里与原型实例继承不一样，他继承的不是实例了而是直接继承父级的原型 prototype;其他的还是一样，也要改原型上 constructor 的值；优点：减少内存消耗，减少创建实例对象<br>4、圣杯继承：创建一个空对象，先让空对象的原型指向父级的原型，然后让子级的原型指向这个对象实例，然后改变子级原型的 constructor 属性，最后在子级的原型上加入一个属性指向父级函数(也可以是父级的原型)<br>15、echarts 如果需要实时刷新数据怎么办;<br>使用定时器实时去获取数据，然后通过监听器去监听数据的变化<br>16、浏览器缓存有哪些？<br>http 缓存，cookie,Localstorage，Sessionstorage;<br>1、http 缓存：当客户端给向服务器请求资源，会先去看浏览器的缓存，如果浏览器的缓存中又该资源，就直接从浏览器缓存中获取而不会向服务器发送请求获取数据；<br>http 缓存都是从第二次请求开始，第一次请求资源时，从服务器返回资源，并在响应头中返回缓存参数，第二次请求时，浏览器判断这些请求参数，命中强缓存<br>就直接 200，否则就把请求参数添加到请求头中传给服务器，看是否命中协商缓存，命中协商缓存就返回 304，否则服务器会返回新的资源<br>2、cookie ：cookie 大小只能存 4kb 而且它是以字符串文本进行传输，每次请求都需带上 cookie 增加请求带宽，cookie 是存在客户端的，cookie 可以设置过期时间，如果没有设置它是跟随浏览器关闭而消失，如果设置了，关闭浏览器也不会消失，只有到了过期时间他在会自动消失<br>3、Localstorage 永久性的缓存，如果自己不手动 remove 则会一直存在，他有自己的 API 方便使用，cookie 需要手动封装；<br>4、SessionStorage 临时性缓存，浏览器关闭后就会消失，他也有自己的 API 方便使用，与 Localstorage 一样存储的大小为 5M;不会向服务器进行通讯<br>5、Session 是由服务端产生的，保存在服务器内存，缓存，硬盘或者数据库中，他是一个对象，相对于 cookie 更安全一般情况通过在 cokie 中设置加密的 seeeionID 进行传递的，session 也有缺点，如果访问的用户很多，就会消耗服务器大量内存</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 八股文 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 八股文 </tag>
-            
-            <tag> Github </tag>
-            
-            <tag> 博客 </tag>
             
         </tags>
       
