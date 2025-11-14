@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qindongxu-cn.github.io/"/>
-  <updated>2025-07-04T09:36:01.103Z</updated>
+  <updated>2025-11-14T03:27:16.731Z</updated>
   <id>https://qindongxu-cn.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>类 FSD 架构实践(自我感受)</title>
+    <link href="https://qindongxu-cn.github.io/2025/09/14/fsd-architecture/"/>
+    <id>https://qindongxu-cn.github.io/2025/09/14/fsd-architecture/</id>
+    <published>2025-09-14T02:30:00.000Z</published>
+    <updated>2025-11-14T03:27:16.731Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;类-FSD-架构：是什么、如何落地、为何更优&quot;&gt;&lt;a href=&quot;#类-FSD-架构：是什么、如何落地、为何更优&quot; class=&quot;headerlink&quot; title=&quot;类 FSD 架构：是什么、如何落地、为何更优&quot;&gt;&lt;/a&gt;类 FSD
+        
+      
+    
+    </summary>
+    
+      <category term="架构" scheme="https://qindongxu-cn.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="架构" scheme="https://qindongxu-cn.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="前端工程化" scheme="https://qindongxu-cn.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+      <category term="FSD" scheme="https://qindongxu-cn.github.io/tags/FSD/"/>
+    
+  </entry>
   
   <entry>
     <title>react18 学习笔记（一）React 17 与 React 18 的区别与优化建议(学习更新中...)</title>
