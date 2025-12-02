@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qindongxu-cn.github.io/2025/11/15/cicd-guide/</loc>
+    
+    <lastmod>2025-12-02T03:36:07.105Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qindongxu-cn.github.io/2025/01/15/monorepo-tools-guide/</loc>
     
-    <lastmod>2025-11-17T02:38:05.816Z</lastmod>
+    <lastmod>2025-12-02T03:25:45.096Z</lastmod>
     
   </url>
   
@@ -23,14 +30,14 @@
   </url>
   
   <url>
-    <loc>https://qindongxu-cn.github.io/galleries/%25E8%2583%258C%25E6%2599%25AF%25E5%259B%25BE%25E7%2589%25874/index.html</loc>
+    <loc>https://qindongxu-cn.github.io/tags/index.html</loc>
     
     <lastmod>2025-07-04T09:36:01.113Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://qindongxu-cn.github.io/tags/index.html</loc>
+    <loc>https://qindongxu-cn.github.io/galleries/%25E8%2583%258C%25E6%2599%25AF%25E5%259B%25BE%25E7%2589%25874/index.html</loc>
     
     <lastmod>2025-07-04T09:36:01.113Z</lastmod>
     
@@ -65,14 +72,14 @@
   </url>
   
   <url>
-    <loc>https://qindongxu-cn.github.io/categories/index.html</loc>
+    <loc>https://qindongxu-cn.github.io/archives/index.html</loc>
     
     <lastmod>2025-07-04T09:36:01.109Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://qindongxu-cn.github.io/archives/index.html</loc>
+    <loc>https://qindongxu-cn.github.io/categories/index.html</loc>
     
     <lastmod>2025-07-04T09:36:01.109Z</lastmod>
     
@@ -163,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://qindongxu-cn.github.io/2019/06/10/html/</loc>
+    <loc>https://qindongxu-cn.github.io/2019/07/30/css/</loc>
     
     <lastmod>2025-07-04T09:36:01.098Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://qindongxu-cn.github.io/2019/07/30/css/</loc>
+    <loc>https://qindongxu-cn.github.io/2019/06/10/html/</loc>
     
     <lastmod>2025-07-04T09:36:01.098Z</lastmod>
     

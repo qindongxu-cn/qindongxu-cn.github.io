@@ -742,16 +742,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" target="_blank">
+                                <span class="chip bg-color">前端工程化</span>
+                            </a>
+                        
                             <a href="/tags/Vue/" target="_blank">
                                 <span class="chip bg-color">Vue</span>
                             </a>
                         
                             <a href="/tags/%E6%9E%B6%E6%9E%84/" target="_blank">
                                 <span class="chip bg-color">架构</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" target="_blank">
-                                <span class="chip bg-color">前端工程化</span>
                             </a>
                         
                             <a href="/tags/Monorepo/" target="_blank">
@@ -792,14 +792,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.8k
+                        2.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        11 分
+                        12 分
                     </div>
                     
                 
@@ -994,6 +994,11 @@
 </ul>
 </li>
 </ol>
+<p><strong>参考资源：</strong></p>
+<ul>
+<li>📖 <a target="_blank" rel="noopener" href="https://turborepo-zh.vercel.app/getting-started/create-new.html">Turborepo 中文文档</a> - 完整的 Turborepo 使用指南</li>
+<li>🚀 <a target="_blank" rel="noopener" href="https://github.com/vercel/turborepo/tree/main/examples/basic">pnpm workspace + Turborepo 启动资源库</a> - 可直接使用的项目模板</li>
+</ul>
 <hr>
 <h2 id="完整项目结构模板"><a href="#完整项目结构模板" class="headerlink" title="完整项目结构模板"></a>完整项目结构模板</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><pre><code>my-monorepo/
 ├── pnpm-workspace.yaml          # pnpm workspace 配置
@@ -1046,8 +1051,8 @@
     └── docs/                   # 文档站点（可选）
         ├── package.json
         └── src/</code></pre><h3 id="核心配置文件"><a href="#核心配置文件" class="headerlink" title="核心配置文件"></a>核心配置文件</h3><h4 id="1-pnpm-workspace-yaml"><a href="#1-pnpm-workspace-yaml" class="headerlink" title="1. pnpm-workspace.yaml"></a>1. <code>pnpm-workspace.yaml</code></h4><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">packages</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> <span class="token string">'apps/*'</span>
-  <span class="token punctuation">-</span> <span class="token string">'packages/*'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+  <span class="token punctuation">-</span> <span class="token string">"apps/*"</span>
+  <span class="token punctuation">-</span> <span class="token string">"packages/*"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h4 id="2-根目录-package-json"><a href="#2-根目录-package-json" class="headerlink" title="2. 根目录 package.json"></a>2. 根目录 <code>package.json</code></h4><pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"my-monorepo"</span><span class="token punctuation">,</span>
   <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
@@ -1156,9 +1161,7 @@ auto-install-peers=true</code></pre><h4 id="5-apps-admin-vue3-package-json（Vue
       <span class="token property">"types"</span><span class="token operator">:</span> <span class="token string">"./dist/index.d.ts"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"files"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token string">"dist"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"files"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"dist"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"vite build"</span><span class="token punctuation">,</span>
     <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"vite build --watch"</span>
@@ -1174,9 +1177,17 @@ auto-install-peers=true</code></pre><h4 id="5-apps-admin-vue3-package-json（Vue
   <span class="token property">"peerDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"vue"</span><span class="token operator">:</span> <span class="token string">"^3.3.0"</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="1-安装-pnpm"><a href="#1-安装-pnpm" class="headerlink" title="1. 安装 pnpm"></a>1. 安装 pnpm</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用 npm 安装</span>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><blockquote>
+<p>💡 <strong>提示</strong>：如果你想快速开始，可以使用官方提供的模板：</p>
+<ul>
+<li>使用 <code>npx create-turbo@latest</code> 创建新的 Monorepo 项目</li>
+<li>参考 <a target="_blank" rel="noopener" href="https://turborepo-zh.vercel.app/getting-started/create-new.html">Turborepo 中文文档</a> 了解详细步骤</li>
+<li>查看 <a target="_blank" rel="noopener" href="https://github.com/vercel/turborepo/tree/main/examples/basic">pnpm workspace + Turborepo 启动资源库</a> 获取完整示例</li>
+</ul>
+</blockquote>
+<h3 id="1-安装-pnpm"><a href="#1-安装-pnpm" class="headerlink" title="1. 安装 pnpm"></a>1. 安装 pnpm</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用 npm 安装</span>
 <span class="token function">npm</span> <span class="token function">install</span> -g pnpm
 
 <span class="token comment" spellcheck="true"># 或使用 corepack（Node.js 16.13+）</span>
@@ -1303,19 +1314,19 @@ nodeLinker<span class="token operator">:</span> node-modules
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Vue2 项目</span>
 apps/user-vue2/node_modules/vue/  <span class="token comment" spellcheck="true"># Vue 2.7.14</span>
 
-<span class="token comment" spellcheck="true"># Vue3 项目  </span>
+<span class="token comment" spellcheck="true"># Vue3 项目</span>
 apps/admin-vue3/node_modules/vue/  <span class="token comment" spellcheck="true"># Vue 3.3.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Q2-组件库如何同时支持-Vue2-和-Vue3？"><a href="#Q2-组件库如何同时支持-Vue2-和-Vue3？" class="headerlink" title="Q2: 组件库如何同时支持 Vue2 和 Vue3？"></a>Q2: 组件库如何同时支持 Vue2 和 Vue3？</h3><p><strong>A:</strong> 两种方案：</p>
 <p><strong>方案 1：分别维护两个组件库</strong></p>
 <pre><code>packages/ui-components-vue2/
 packages/ui-components-vue3/</code></pre><p><strong>方案 2：使用适配层（推荐）</strong></p>
 <pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// packages/ui-components/src/index.ts</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> isVue3 <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./utils'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> isVue3 <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./utils"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">(</span>isVue3<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">export</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token string">'./vue3'</span>
+  <span class="token keyword">export</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token string">"./vue3"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-  <span class="token keyword">export</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token string">'./vue2'</span>
+  <span class="token keyword">export</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token string">"./vue2"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Q3-如何避免循环依赖？"><a href="#Q3-如何避免循环依赖？" class="headerlink" title="Q3: 如何避免循环依赖？"></a>Q3: 如何避免循环依赖？</h3><p><strong>A:</strong> 使用依赖层级：</p>
 <pre><code>shared-utils (最底层)
@@ -1346,7 +1357,7 @@ apps/* (应用层)</code></pre><p>配合 ESLint 规则检查：</p>
 <span class="token punctuation">{</span>
   <span class="token property">"pipeline"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"build"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"dependsOn"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"^build"</span><span class="token punctuation">]</span>  // 先构建依赖的包
+      <span class="token property">"dependsOn"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"^build"</span><span class="token punctuation">]</span> // 先构建依赖的包
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -2251,7 +2262,7 @@ pnpm changeset publish<span aria-hidden="true" class="line-numbers-rows"><span><
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">197.3k</span> 字
+                <span class="white-color">200.8k</span> 字
             
 
             
@@ -2573,7 +2584,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </script>
         
 
-    
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -2586,5 +2597,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 </html>

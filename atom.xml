@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qindongxu-cn.github.io/"/>
-  <updated>2025-11-14T07:16:48.688Z</updated>
+  <updated>2025-12-02T03:36:07.105Z</updated>
   <id>https://qindongxu-cn.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端项目容器化 CI/CD 配置指南：从入门到实战</title>
+    <link href="https://qindongxu-cn.github.io/2025/11/15/cicd-guide/"/>
+    <id>https://qindongxu-cn.github.io/2025/11/15/cicd-guide/</id>
+    <published>2025-11-15T02:30:00.000Z</published>
+    <updated>2025-12-02T03:36:07.105Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前端项目容器化-CI-CD-配置指南：从入门到实战&quot;&gt;&lt;a href=&quot;#前端项目容器化-CI-CD-配置指南：从入门到实战&quot; class=&quot;headerlink&quot; title=&quot;前端项目容器化 CI/CD 配置指南：从入门到实战&quot;&gt;&lt;/a&gt;前端项目容器化
+        
+      
+    
+    </summary>
+    
+      <category term="前端工程化" scheme="https://qindongxu-cn.github.io/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+    
+      <category term="前端工程化" scheme="https://qindongxu-cn.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+      <category term="CI/CD" scheme="https://qindongxu-cn.github.io/tags/CI-CD/"/>
+    
+      <category term="Docker" scheme="https://qindongxu-cn.github.io/tags/Docker/"/>
+    
+      <category term="GitLab" scheme="https://qindongxu-cn.github.io/tags/GitLab/"/>
+    
+      <category term="DevOps" scheme="https://qindongxu-cn.github.io/tags/DevOps/"/>
+    
+  </entry>
   
   <entry>
     <title>类 FSD 架构实践(自我感受)</title>
@@ -38,9 +72,9 @@
       <category term="架构" scheme="https://qindongxu-cn.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
     
     
-      <category term="架构" scheme="https://qindongxu-cn.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
-    
       <category term="前端工程化" scheme="https://qindongxu-cn.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+      <category term="架构" scheme="https://qindongxu-cn.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
     
       <category term="FSD" scheme="https://qindongxu-cn.github.io/tags/FSD/"/>
     
@@ -172,7 +206,7 @@
     <link href="https://qindongxu-cn.github.io/2025/01/15/monorepo-tools-guide/"/>
     <id>https://qindongxu-cn.github.io/2025/01/15/monorepo-tools-guide/</id>
     <published>2025-01-15T02:30:00.000Z</published>
-    <updated>2025-11-17T02:38:05.816Z</updated>
+    <updated>2025-12-02T03:25:45.096Z</updated>
     
     <summary type="html">
     
@@ -189,11 +223,11 @@
       <category term="架构" scheme="https://qindongxu-cn.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
     
     
+      <category term="前端工程化" scheme="https://qindongxu-cn.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
       <category term="Vue" scheme="https://qindongxu-cn.github.io/tags/Vue/"/>
     
       <category term="架构" scheme="https://qindongxu-cn.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
-    
-      <category term="前端工程化" scheme="https://qindongxu-cn.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
     
       <category term="Monorepo" scheme="https://qindongxu-cn.github.io/tags/Monorepo/"/>
     
