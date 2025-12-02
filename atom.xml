@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qindongxu-cn.github.io/"/>
-  <updated>2025-12-02T03:36:07.105Z</updated>
+  <updated>2025-12-02T04:01:33.101Z</updated>
   <id>https://qindongxu-cn.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://qindongxu-cn.github.io/2025/11/15/cicd-guide/"/>
     <id>https://qindongxu-cn.github.io/2025/11/15/cicd-guide/</id>
     <published>2025-11-15T02:30:00.000Z</published>
-    <updated>2025-12-02T03:36:07.105Z</updated>
+    <updated>2025-12-02T04:01:33.101Z</updated>
     
     <summary type="html">
     
@@ -193,11 +193,11 @@
       <category term="前端知识汇总" scheme="https://qindongxu-cn.github.io/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/"/>
     
     
-      <category term="前端知识汇总" scheme="https://qindongxu-cn.github.io/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/"/>
-    
       <category term="Github" scheme="https://qindongxu-cn.github.io/tags/Github/"/>
     
       <category term="博客" scheme="https://qindongxu-cn.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="前端知识汇总" scheme="https://qindongxu-cn.github.io/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/"/>
     
   </entry>
   
@@ -435,11 +435,11 @@
       <category term="软件安装与配置" scheme="https://qindongxu-cn.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     
     
+      <category term="Hexo" scheme="https://qindongxu-cn.github.io/tags/Hexo/"/>
+    
       <category term="Github" scheme="https://qindongxu-cn.github.io/tags/Github/"/>
     
       <category term="博客" scheme="https://qindongxu-cn.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-      <category term="Hexo" scheme="https://qindongxu-cn.github.io/tags/Hexo/"/>
     
   </entry>
   
