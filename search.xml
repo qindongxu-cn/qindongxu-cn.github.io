@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>有灵 Pro</title>
+      <link href="/2025/12/01/youling-pro/"/>
+      <url>/2025/12/01/youling-pro/</url>
+      
+        <content type="html"><![CDATA[<h1 id="有灵-Pro"><a href="#有灵-Pro" class="headerlink" title="有灵 Pro"></a>有灵 Pro</h1><h2 id="1-目录结构"><a href="#1-目录结构" class="headerlink" title="1. 目录结构"></a>1. 目录结构</h2><pre class="line-numbers language-json"><code class="language-json">- electron                        // Electron 主线程部分代码- envs                            // 环境变量- plugins                         // Vite 插件- public                          // 渲染线程资源文件- resources                       // 应用程序资源文件- src                             // 渲染线程源码  - apis                          // 后端接口  - components                    // 公共组件  - core    - interaction-composite       // 通用交互逻辑    - speech-recognizer           // 语音识别引擎    - ttsa-renderer               // ttsa 渲染器  - hooks                         // 通用 hooks  - layout                        // Electron 应用自绘界面布局  - pages    - face                        // 本地人脸识别服务启动的独立页面    - home                        // 主要业务逻辑页面    - login                       // 登录页    - preview                     // Web 模式下自动登录页面    - setting                     // 设置页面  - router                        // 路由配置  - shared                        // 全局共享变量  - stores    - store-asr                   // 语音识别服务    - store-awaken                // 本地语音唤醒服务    - store-dev                   // 开发者工具    - store-face                  // 人脸识别服务    - store-setting               // 本地配置项    - store-state                 // 应用状态    - store-ttsa                  // 数字人服务    - store-user                  // 用户状态  - styles                        // 样式  - ui                            // 业务组件    - ui-asr-animation            // 语音识别动效    - ui-asr-result               // 语音识别结果    - ui-entry-bubble             // 快速入口    - ui-entry-display            // 物料弹出展示窗口    - ui-material                 // 多模态内容展示组件    - ui-multimodal-conversation  // 气泡模式会话列表    - ui-subtitle                 // 字幕模式    - ui-welcome-bubble           // 欢迎语料  - utils                         // 通用工具- types                           // 类型声明<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="2-架构设计"><a href="#2-架构设计" class="headerlink" title="2. 架构设计"></a>2. 架构设计</h2><h3 id="2-1-数字人"><a href="#2-1-数字人" class="headerlink" title="2.1 数字人"></a>2.1 数字人</h3><p>通过数字人 SDK（<code>public/libs/ttsa.*.js</code>）和后端 API （<code>src/apis/action.ts</code>）进行驱动。</p><p>其状态通过 <code>src/stores/store-ttsa/store-ttsa.ts</code> 进行管理。</p><p>请注意，你需要自行管理数字人的状态，并在业务需要的节点主动调用驱动或打断方法。</p><h3 id="2-2-语音识别"><a href="#2-2-语音识别" class="headerlink" title="2.2 语音识别"></a>2.2 语音识别</h3><p>语音识别服务被拆分为了两层：服务底层和适配层。</p><p>底层对应识别服务商，通过服务商的 SDK 或自行编写代码进行接入（在当前应用中，包含腾讯语音识别服务和瓦力识别服务）。由于服务商提供的返回内容大相径庭，因此这里需要第二层，也就是适配层的能力。</p><p>适配层的关键在于实现 <code>SpeechRecognizerEngine</code> 标准接口（位于<code>src/core/speech-recognizer/types.ts</code>）。该接口约定了语音识别的 3 个主要阶段：句子开始、句子更新、句子结束。</p><p>以典型业务（识别一句话然后发给消费者）为例，其 RxJS 实现大概如下：</p><pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">declare</span> <span class="token keyword">const</span> asr_start$<span class="token punctuation">:</span> Subject<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span><span class="token punctuation">;</span><span class="token keyword">declare</span> <span class="token keyword">const</span> asr_update$<span class="token punctuation">:</span> Subject<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span><span class="token punctuation">;</span><span class="token keyword">declare</span> <span class="token keyword">const</span> asr_end$<span class="token punctuation">:</span> Subject<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/** 你可能需要实时显示识别的结果 */</span><span class="token keyword">const</span> asrContent <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>asr_start$  <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>    <span class="token function">switchMap</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>      <span class="token keyword">return</span> asr_update$<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>        <span class="token function">tap</span><span class="token punctuation">(</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>          asrContent<span class="token punctuation">.</span>value <span class="token operator">=</span> text<span class="token punctuation">;</span>        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>        <span class="token function">takeUntil</span><span class="token punctuation">(</span>asr_end$<span class="token punctuation">)</span><span class="token punctuation">,</span>        <span class="token function">finalize</span><span class="token punctuation">(</span>async <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>          await <span class="token function">getAnswer</span><span class="token punctuation">(</span>asrContent<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span><span class="token punctuation">)</span>      <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span>  <span class="token punctuation">)</span>  <span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>适配层的存在，使得业务开发不需要管理语音识别服务商底层不同的细节。</p><h3 id="2-3-语音唤醒"><a href="#2-3-语音唤醒" class="headerlink" title="2.3 语音唤醒"></a>2.3 语音唤醒</h3><p>语音唤醒是一个本地服务，因此只能在 Electron 环境下使用。</p><p>语音唤醒服务逻辑代码位于 <code>electron/main/hooks/useAwakenServer.ts</code>，其服务本体位于 <code>public/server/awaken</code>。</p><p>主线程通过 <code>child_process.execFile</code> 使用子线程来启动语音唤醒服务，服务会启动 <code>WebSocket</code> 来与渲染线程进行通信。</p><h3 id="2-4-人脸识别"><a href="#2-4-人脸识别" class="headerlink" title="2.4 人脸识别"></a>2.4 人脸识别</h3><p>人脸识别有两套：本地人脸识别、基于瓦力服务的人脸识别（后者需要硬件支持）。</p><h4 id="2-4-1-本地人脸识别"><a href="#2-4-1-本地人脸识别" class="headerlink" title="2.4.1 本地人脸识别"></a>2.4.1 本地人脸识别</h4><p>本地人脸识别服务的逻辑代码位于 <code>electron/main/hooks/useFaceDetectWindow.ts</code>，其模型位于 <code>public/weights</code>。</p><p>主线程通过 <code>BrowserWindow</code> 启动不可见子页面，该页面通过 <code>BroadcastChannel</code> 与主页面进行通信。</p><h4 id="2-4-2-基于瓦力的人脸识别"><a href="#2-4-2-基于瓦力的人脸识别" class="headerlink" title="2.4.2 基于瓦力的人脸识别"></a>2.4.2 基于瓦力的人脸识别</h4><p>此人脸识别需要访问瓦力引擎的底层，通过订阅其 <code>videoFrame</code> 事件流获取。在 <code>src/stores/store-asr</code> 中实现了此逻辑，并将人脸事件转发给 <code>src/stores/store-face/store-face.ts</code> 进行消费。</p><p>因此可以将 <code>store-face</code> 视为人脸识别服务的适配层，只要消费其暴露出来的 <code>subjects</code> 即可。</p><h2 id="3-开发难点"><a href="#3-开发难点" class="headerlink" title="3. 开发难点"></a>3. 开发难点</h2><p>一个完整业务闭环往往包含【人脸识别】、【语音唤醒】、【语音识别】、【数字人驱动】等多个子环节，且各环节的调用均为异步操作，你需要谨慎处理其【时序状态】，甚至在必要时对异步环节进行【打断操作】。</p><pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">/** 驱动数字人发言 */</span><span class="token keyword">declare</span> <span class="token keyword">const</span> speak<span class="token punctuation">:</span> <span class="token punctuation">(</span>text<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> Promise<span class="token operator">&lt;</span><span class="token keyword">void</span><span class="token operator">></span><span class="token comment" spellcheck="true">/** 数字人 SDK 返回的 voice_end 事件 */</span><span class="token keyword">declare</span> <span class="token keyword">const</span> voice_end$<span class="token punctuation">:</span> Subject<span class="token operator">&lt;</span><span class="token keyword">void</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">/** 业务流程 */</span><span class="token keyword">const</span> main <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>  await <span class="token function">speak</span><span class="token punctuation">(</span><span class="token string">'你好，很高兴遇见你。'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 注意，此异步方法调用完毕并不等于数字人发言完毕，数字人此刻可能仍在发言，你需要等待其 SDK 返回的 voice_end 事件</span>  await <span class="token function">firstValueFrom</span><span class="token punctuation">(</span>voice_end$<span class="token punctuation">)</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="4-参考文档"><a href="#4-参考文档" class="headerlink" title="4. 参考文档"></a>4. 参考文档</h2><blockquote><ol><li><a href="https://rxjs.dev/">RxJS 文档</a></li><li><a href="https://rxmarbles.com/">RxJS 交互式弹珠图</a></li><li><a href="https://gxhdvps5xn.feishu.cn/wiki/EqlmwVBCSi7V0MkxUTLcFVEynob">瓦力协议</a> (由洲明科技提供，可能不是最新的)</li><li><a href="https://aiui-doc.xf-yun.com/project-1/doc-16/">讯飞文档</a></li><li><a href="https://cloud.tencent.com/document/product/1093/48982">腾讯语音识别文档</a></li></ol></blockquote><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Electron </tag>
+            
+            <tag> 数字人 </tag>
+            
+            <tag> 语音识别 </tag>
+            
+            <tag> 语音唤醒 </tag>
+            
+            <tag> 人脸识别 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端项目容器化 CI/CD 配置指南：从入门到实战</title>
       <link href="/2025/11/15/cicd-guide/"/>
       <url>/2025/11/15/cicd-guide/</url>
@@ -169,11 +202,11 @@
       
         <tags>
             
+            <tag> 前端知识汇总 </tag>
+            
             <tag> Github </tag>
             
             <tag> 博客 </tag>
-            
-            <tag> 前端知识汇总 </tag>
             
         </tags>
       
@@ -403,11 +436,11 @@
       
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> Github </tag>
             
             <tag> 博客 </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
       
