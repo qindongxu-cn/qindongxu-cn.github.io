@@ -7,8 +7,12 @@ https://qindongxu-cn.github.io/2025/06/06/react18/
 https://qindongxu-cn.github.io/2025/06/06/canvas/
 https://qindongxu-cn.github.io/2025/06/05/svg/
 https://qindongxu-cn.github.io/2025/05/10/88/
+https://qindongxu-cn.github.io/2025/02/21/ai-shu-zi-ren-xiang-mu-luo-di-shi-jian-wen-dang/
 https://qindongxu-cn.github.io/2025/01/15/monorepo-tools-guide/
+https://qindongxu-cn.github.io/2025/01/15/qian-duan-xuan-ran-shu-zi-ren-sdk-xi-tong-jia-gou/
 https://qindongxu-cn.github.io/2025/01/10/reactinterview2/
+https://qindongxu-cn.github.io/2024/12/20/ai-shi-zhan-xiang-mu-wen-dang/
+https://qindongxu-cn.github.io/2024/12/20/electron-ji-zhu-shi-jian-wen-dang/
 https://qindongxu-cn.github.io/2024/12/10/reactinterview1/
 https://qindongxu-cn.github.io/2023/07/10/network/
 https://qindongxu-cn.github.io/2022/08/30/theory/

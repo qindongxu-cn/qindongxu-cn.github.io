@@ -62,7 +62,7 @@ class OrbitControls extends EventDispatcher {
 		this.maxPolarAngle = Math.PI; // radians
 
 		// How far you can orbit horizontally, upper and lower limits.
-		// If set, the interval [ min, max ] must be a sub-interval of [ - 2 PI, 2 PI ], with ( max - min &lt; 2 PI )
+		// If set, the interval [ min, max ] must be a sub-interval of [ - 2 PI, 2 PI ], with ( max - min < 2 PI )
 		this.minAzimuthAngle = - Infinity; // radians
 		this.maxAzimuthAngle = Infinity; // radians
 
@@ -195,7 +195,7 @@ class OrbitControls extends EventDispatcher {
 				// angle from z-axis around y-axis
 				spherical.setFromVector3( offset );
 
-				if ( scope.autoRotate &amp;&amp; state === STATE.NONE ) {
+				if ( scope.autoRotate && state === STATE.NONE ) {
 
 					rotateLeft( getAutoRotationAngle( deltaTime ) );
 
@@ -218,19 +218,19 @@ class OrbitControls extends EventDispatcher {
 				let min = scope.minAzimuthAngle;
 				let max = scope.maxAzimuthAngle;
 
-				if ( isFinite( min ) &amp;&amp; isFinite( max ) ) {
+				if ( isFinite( min ) && isFinite( max ) ) {
 
-					if ( min &lt; - Math.PI ) min += twoPI; else if ( min &gt; Math.PI ) min -= twoPI;
+					if ( min < - Math.PI ) min += twoPI; else if ( min > Math.PI ) min -= twoPI;
 
-					if ( max &lt; - Math.PI ) max += twoPI; else if ( max &gt; Math.PI ) max -= twoPI;
+					if ( max < - Math.PI ) max += twoPI; else if ( max > Math.PI ) max -= twoPI;
 
-					if ( min &lt;= max ) {
+					if ( min <= max ) {
 
 						spherical.theta = Math.max( min, Math.min( max, spherical.theta ) );
 
 					} else {
 
-						spherical.theta = ( spherical.theta &gt; ( min + max ) / 2 ) ?
+						spherical.theta = ( spherical.theta > ( min + max ) / 2 ) ?
 							Math.max( min, spherical.theta ) :
 							Math.min( max, spherical.theta );
 
@@ -264,7 +264,7 @@ class OrbitControls extends EventDispatcher {
 				let zoomChanged = false;
 				// adjust the camera position based on zoom only if we're not zooming to the cursor or if it's an ortho camera
 				// we adjust zoom later in these cases
-				if ( scope.zoomToCursor &amp;&amp; performCursorZoom || scope.object.isOrthographicCamera ) {
+				if ( scope.zoomToCursor && performCursorZoom || scope.object.isOrthographicCamera ) {
 
 					spherical.radius = clampDistance( spherical.radius );
 
@@ -301,7 +301,7 @@ class OrbitControls extends EventDispatcher {
 				}
 
 				// adjust camera position
-				if ( scope.zoomToCursor &amp;&amp; performCursorZoom ) {
+				if ( scope.zoomToCursor && performCursorZoom ) {
 
 					let newRadius = null;
 					if ( scope.object.isPerspectiveCamera ) {
@@ -363,7 +363,7 @@ class OrbitControls extends EventDispatcher {
 
 							// if the camera is 20 degrees above the horizon then don't adjust the focus target to avoid
 							// extremely large values
-							if ( Math.abs( scope.object.up.dot( _ray.direction ) ) &lt; TILT_LIMIT ) {
+							if ( Math.abs( scope.object.up.dot( _ray.direction ) ) < TILT_LIMIT ) {
 
 								object.lookAt( scope.target );
 
@@ -396,13 +396,13 @@ class OrbitControls extends EventDispatcher {
 				performCursorZoom = false;
 
 				// update condition is:
-				// min(camera displacement, camera rotation in radians)^2 &gt; EPS
+				// min(camera displacement, camera rotation in radians)^2 > EPS
 				// using small-angle approximation cos(x/2) = 1 - x^2 / 8
 
 				if ( zoomChanged ||
-					lastPosition.distanceToSquared( scope.object.position ) &gt; EPS ||
-					8 * ( 1 - lastQuaternion.dot( scope.object.quaternion ) ) &gt; EPS ||
-					lastTargetPosition.distanceToSquared( scope.target ) &gt; EPS ) {
+					lastPosition.distanceToSquared( scope.object.position ) > EPS ||
+					8 * ( 1 - lastQuaternion.dot( scope.object.quaternion ) ) > EPS ||
+					lastTargetPosition.distanceToSquared( scope.target ) > EPS ) {
 
 					scope.dispatchEvent( _changeEvent );
 
@@ -715,11 +715,11 @@ class OrbitControls extends EventDispatcher {
 
 			dollyDelta.subVectors( dollyEnd, dollyStart );
 
-			if ( dollyDelta.y &gt; 0 ) {
+			if ( dollyDelta.y > 0 ) {
 
 				dollyOut( getZoomScale( dollyDelta.y ) );
 
-			} else if ( dollyDelta.y &lt; 0 ) {
+			} else if ( dollyDelta.y < 0 ) {
 
 				dollyIn( getZoomScale( dollyDelta.y ) );
 
@@ -749,11 +749,11 @@ class OrbitControls extends EventDispatcher {
 
 			updateZoomParameters( event.clientX, event.clientY );
 
-			if ( event.deltaY &lt; 0 ) {
+			if ( event.deltaY < 0 ) {
 
 				dollyIn( getZoomScale( event.deltaY ) );
 
-			} else if ( event.deltaY &gt; 0 ) {
+			} else if ( event.deltaY > 0 ) {
 
 				dollyOut( getZoomScale( event.deltaY ) );
 
@@ -1257,7 +1257,7 @@ class OrbitControls extends EventDispatcher {
 			}
 
 			// detect if event was triggered by pinching
-			if ( event.ctrlKey &amp;&amp; ! controlActive ) {
+			if ( event.ctrlKey && ! controlActive ) {
 
 				newEvent.deltaY *= 10;
 
@@ -1349,7 +1349,7 @@ class OrbitControls extends EventDispatcher {
 
 						case TOUCH.DOLLY_PAN:
 
-							if ( scope.enableZoom === false &amp;&amp; scope.enablePan === false ) return;
+							if ( scope.enableZoom === false && scope.enablePan === false ) return;
 
 							handleTouchStartDollyPan( event );
 
@@ -1359,7 +1359,7 @@ class OrbitControls extends EventDispatcher {
 
 						case TOUCH.DOLLY_ROTATE:
 
-							if ( scope.enableZoom === false &amp;&amp; scope.enableRotate === false ) return;
+							if ( scope.enableZoom === false && scope.enableRotate === false ) return;
 
 							handleTouchStartDollyRotate( event );
 
@@ -1417,7 +1417,7 @@ class OrbitControls extends EventDispatcher {
 
 				case STATE.TOUCH_DOLLY_PAN:
 
-					if ( scope.enableZoom === false &amp;&amp; scope.enablePan === false ) return;
+					if ( scope.enableZoom === false && scope.enablePan === false ) return;
 
 					handleTouchMoveDollyPan( event );
 
@@ -1427,7 +1427,7 @@ class OrbitControls extends EventDispatcher {
 
 				case STATE.TOUCH_DOLLY_ROTATE:
 
-					if ( scope.enableZoom === false &amp;&amp; scope.enableRotate === false ) return;
+					if ( scope.enableZoom === false && scope.enableRotate === false ) return;
 
 					handleTouchMoveDollyRotate( event );
 
@@ -1461,7 +1461,7 @@ class OrbitControls extends EventDispatcher {
 
 			delete pointerPositions[ event.pointerId ];
 
-			for ( let i = 0; i &lt; pointers.length; i ++ ) {
+			for ( let i = 0; i < pointers.length; i ++ ) {
 
 				if ( pointers[ i ] == event.pointerId ) {
 
@@ -1476,7 +1476,7 @@ class OrbitControls extends EventDispatcher {
 
 		function isTrackingPointer( event ) {
 
-			for ( let i = 0; i &lt; pointers.length; i ++ ) {
+			for ( let i = 0; i < pointers.length; i ++ ) {
 
 				if ( pointers[ i ] == event.pointerId ) return true;
 
@@ -1530,22 +1530,3 @@ class OrbitControls extends EventDispatcher {
 }
 
 export { OrbitControls };
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
