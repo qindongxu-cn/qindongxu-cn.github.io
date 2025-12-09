@@ -147,6 +147,40 @@
   </entry>
   
   <entry>
+    <title>Three.js 3D 模型渲染技术文档</title>
+    <link href="https://qindongxu-cn.github.io/2025/08/15/three3d-render/"/>
+    <id>https://qindongxu-cn.github.io/2025/08/15/three3d-render/</id>
+    <published>2025-08-15T02:00:00.000Z</published>
+    <updated>2025-12-09T07:39:33.612Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Three-js-3D-模型渲染技术文档&quot;&gt;&lt;a href=&quot;#Three-js-3D-模型渲染技术文档&quot; class=&quot;headerlink&quot; title=&quot;Three.js 3D 模型渲染技术文档&quot;&gt;&lt;/a&gt;Three.js 3D
+        
+      
+    
+    </summary>
+    
+      <category term="前端知识汇总" scheme="https://qindongxu-cn.github.io/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/"/>
+    
+    
+      <category term="JavaScript" scheme="https://qindongxu-cn.github.io/tags/JavaScript/"/>
+    
+      <category term="Three.js" scheme="https://qindongxu-cn.github.io/tags/Three-js/"/>
+    
+      <category term="WebGL" scheme="https://qindongxu-cn.github.io/tags/WebGL/"/>
+    
+      <category term="3D渲染" scheme="https://qindongxu-cn.github.io/tags/3D%E6%B8%B2%E6%9F%93/"/>
+    
+      <category term="前端" scheme="https://qindongxu-cn.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>react18 学习笔记（一）React 17 与 React 18 的区别与优化建议(学习更新中...)</title>
     <link href="https://qindongxu-cn.github.io/2025/06/06/react18/"/>
     <id>https://qindongxu-cn.github.io/2025/06/06/react18/</id>
@@ -596,36 +630,6 @@
       <category term="博客" scheme="https://qindongxu-cn.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="JavaScript" scheme="https://qindongxu-cn.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS</title>
-    <link href="https://qindongxu-cn.github.io/2019/07/30/css/"/>
-    <id>https://qindongxu-cn.github.io/2019/07/30/css/</id>
-    <published>2019-07-30T10:09:03.000Z</published>
-    <updated>2025-07-04T09:36:01.098Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt; &lt;img src=&quot;https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="CSS" scheme="https://qindongxu-cn.github.io/categories/CSS/"/>
-    
-    
-      <category term="Github" scheme="https://qindongxu-cn.github.io/tags/Github/"/>
-    
-      <category term="博客" scheme="https://qindongxu-cn.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-      <category term="CSS" scheme="https://qindongxu-cn.github.io/tags/CSS/"/>
     
   </entry>
   
