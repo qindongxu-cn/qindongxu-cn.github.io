@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qindongxu-cn.github.io/"/>
-  <updated>2025-12-03T06:36:57.309Z</updated>
+  <updated>2025-12-09T06:59:03.902Z</updated>
   <id>https://qindongxu-cn.github.io/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>有言项目熟悉</title>
+    <link href="https://qindongxu-cn.github.io/2025/12/09/you-yan-xiang-mu-shou-xi/"/>
+    <id>https://qindongxu-cn.github.io/2025/12/09/you-yan-xiang-mu-shou-xi/</id>
+    <published>2025-12-09T02:00:00.000Z</published>
+    <updated>2025-12-09T06:59:03.902Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;有言项目熟悉&quot;&gt;&lt;a href=&quot;#有言项目熟悉&quot; class=&quot;headerlink&quot; title=&quot;有言项目熟悉&quot;&gt;&lt;/a&gt;有言项目熟悉&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Youyan Multi
+        
+      
+    
+    </summary>
+    
+      <category term="项目文档" scheme="https://qindongxu-cn.github.io/categories/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/"/>
+    
+    
+      <category term="Monorepo" scheme="https://qindongxu-cn.github.io/tags/Monorepo/"/>
+    
+      <category term="项目文档" scheme="https://qindongxu-cn.github.io/tags/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/"/>
+    
+      <category term="Vue3" scheme="https://qindongxu-cn.github.io/tags/Vue3/"/>
+    
+      <category term="Nuxt3" scheme="https://qindongxu-cn.github.io/tags/Nuxt3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>有灵 Pro</title>
     <link href="https://qindongxu-cn.github.io/2025/12/01/youling-pro/"/>
     <id>https://qindongxu-cn.github.io/2025/12/01/youling-pro/</id>
     <published>2025-12-01T02:00:00.000Z</published>
-    <updated>2025-12-03T06:36:57.309Z</updated>
+    <updated>2025-12-09T06:45:37.574Z</updated>
     
     <summary type="html">
     
@@ -594,36 +626,6 @@
       <category term="博客" scheme="https://qindongxu-cn.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="CSS" scheme="https://qindongxu-cn.github.io/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML</title>
-    <link href="https://qindongxu-cn.github.io/2019/06/10/html/"/>
-    <id>https://qindongxu-cn.github.io/2019/06/10/html/</id>
-    <published>2019-06-10T10:49:03.000Z</published>
-    <updated>2025-07-04T09:36:01.098Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="HTML" scheme="https://qindongxu-cn.github.io/categories/HTML/"/>
-    
-    
-      <category term="Github" scheme="https://qindongxu-cn.github.io/tags/Github/"/>
-    
-      <category term="博客" scheme="https://qindongxu-cn.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-      <category term="HTML" scheme="https://qindongxu-cn.github.io/tags/HTML/"/>
     
   </entry>
   
