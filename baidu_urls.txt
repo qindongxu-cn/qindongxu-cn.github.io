@@ -1,3 +1,4 @@
+https://qindongxu-cn.github.io/2025/12/09/ai-shu-zi-ren-xiang-mu-luo-di-shi-jian-wen-dang/
 https://qindongxu-cn.github.io/2025/12/09/you-yan-xiang-mu-shou-xi/
 https://qindongxu-cn.github.io/2025/12/01/youling-pro/
 https://qindongxu-cn.github.io/2025/11/20/you-ling-pro-jun-gong-ding-zhi-hua-shu-zi-ren-da-ping-xiang-mu-ji-zhu-zong-jie/
@@ -8,8 +9,8 @@ https://qindongxu-cn.github.io/2025/06/06/react18/
 https://qindongxu-cn.github.io/2025/06/06/canvas/
 https://qindongxu-cn.github.io/2025/06/05/svg/
 https://qindongxu-cn.github.io/2025/05/10/88/
-https://qindongxu-cn.github.io/2025/02/21/ai-shu-zi-ren-xiang-mu-luo-di-shi-jian-wen-dang/
 https://qindongxu-cn.github.io/2025/01/20/ai-gong-ju-shi-yong-ti-yan-yu-ge-ren-gan-shou/
+https://qindongxu-cn.github.io/2025/01/20/shu-zi-ren-dui-hua-liu-cheng-de-ge-lei-ai-de-api/
 https://qindongxu-cn.github.io/2025/01/15/monorepo-tools-guide/
 https://qindongxu-cn.github.io/2025/01/15/qian-duan-xuan-ran-shu-zi-ren-sdk-xi-tong-jia-gou/
 https://qindongxu-cn.github.io/2025/01/10/reactinterview2/
